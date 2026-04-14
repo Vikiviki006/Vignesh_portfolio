@@ -105,7 +105,7 @@ const HeroSection = () => {
           <span className="text-foreground">Machine Learning</span>
           <br />
           <span className="text-foreground">Engineer & </span>
-          <span className="text-primary">Developer</span>
+          <span className="text-primary">Full Stack Developer</span>
         </motion.h1>
 
         {/* Description */}
