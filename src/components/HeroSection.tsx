@@ -1,10 +1,55 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Download, ArrowDown } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const AnimatedName = ({ text }: { text: string }) => {
+  const letters = Array.from(text);
+
+  const container: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.3 },
+    },
+  };
+
+  const child: Variants = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: "brightness(1.5)",
+      transition: { type: "spring", damping: 12, stiffness: 200 },
+    },
+    hidden: {
+      opacity: 0,
+      y: 20,
+      scale: 0.5,
+      filter: "brightness(0.5)",
+    },
+  };
+
+  return (
+    <motion.div
+      style={{ display: "inline-block", overflow: "visible" }}
+      variants={container}
+      initial="hidden"
+      animate="visible"
+      className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(175,90%,65%)] to-[hsl(168,90%,60%)] drop-shadow-[0_0_10px_rgba(63,163,154,0.8)] font-extrabold"
+    >
+      {letters.map((letter, index) => (
+        <motion.span variants={child} key={index} style={{ display: "inline-block" }}>
+          {letter === " " ? "\u00A0" : letter}
+        </motion.span>
+      ))}
+    </motion.div>
+  );
+};
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-    {/* Subtle warm ambient background */}
-    <div className="absolute inset-0 bg-background">
+    {/* Subtle warm ambient background - transparent to show global sparkles */}
+    <div className="absolute inset-0 pointer-events-none z-[-1]">
       <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-primary/[0.03] rounded-full blur-[150px]" />
       <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-accent/[0.02] rounded-full blur-[120px]" />
       {/* Subtle dot pattern */}
@@ -34,6 +79,8 @@ const HeroSection = () => (
         transition={{ delay: 0.3, duration: 0.6 }}
         className="text-4xl md:text-6xl lg:text-7xl font-mono font-bold leading-[1.1] tracking-tight"
       >
+        <span className="text-foreground"><AnimatedName text="Vignesh K" /></span>
+        <br />
         <span className="text-foreground">Machine Learning</span>
         <br />
         <span className="text-foreground">Engineer & </span>
