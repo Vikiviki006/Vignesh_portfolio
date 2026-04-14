@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
+import { Download } from "lucide-react";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-    {/* BG image */}
+    {/* Refined ambient background */}
     <div className="absolute inset-0">
-      <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" width={1920} height={1080} />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(220,25%,6%)] via-background to-[hsl(225,20%,8%)]" />
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-accent/[0.03] rounded-full blur-[100px]" />
     </div>
 
     <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -49,6 +50,14 @@ const HeroSection = () => (
           className="px-8 py-3 bg-primary text-primary-foreground font-mono text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity glow-primary"
         >
           View Projects
+        </a>
+        <a
+          href="/resume.pdf"
+          download="Vignesh_K_Resume.pdf"
+          className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-accent-foreground font-mono text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity"
+        >
+          <Download className="w-4 h-4" />
+          Download Resume
         </a>
         <a
           href="#contact"
