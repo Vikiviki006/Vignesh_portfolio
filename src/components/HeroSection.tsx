@@ -24,7 +24,7 @@ const HeroSection = () => (
         transition={{ delay: 0.1, duration: 0.5 }}
         className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-border/80 bg-card/50"
       >
-        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+        <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
         <span className="text-xs font-mono text-muted-foreground">Open to opportunities</span>
       </motion.div>
 
