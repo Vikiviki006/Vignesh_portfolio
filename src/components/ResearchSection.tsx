@@ -7,7 +7,7 @@ const papers = [
     title: "Generative AI for Personalized Energy Consumption Behavior Analysis",
     publisher: "IGI Global",
     date: "Dec 2025",
-    link: "https://github.com/Vikiviki006",
+    link: "https://www.linkedin.com/posts/vignesh-k-2ab69629b_book-activity-7396451693862768642-5J88/?utm_source=share&utm_medium=member_android&rcm=ACoAAEiJuyMB57W2dZyVyazoXbaMpR1iW7yZnsA",
     description:
       "Uses Generative AI to predict and optimize personalized energy usage. Enhances resilient, ethical energy systems with human behavior insights.",
   },
@@ -16,7 +16,7 @@ const papers = [
       "Osteoporosis Prediction Using Machine Learning: An XGBoost Approach for Early Detection",
     publisher: "IEEE Xplore",
     date: "Aug 2025",
-    link: "https://github.com/Vikiviki006",
+    link: "https://ieeexplore.ieee.org/document/11086173",
     description:
       "Developed an osteoporosis prediction model using XGBoost, achieving 92% accuracy and 98% precision on real-world clinical datasets.",
   },
@@ -24,7 +24,7 @@ const papers = [
     title: "Enhanced Brain Tumor Detection using CNNs",
     publisher: "IGI Global",
     date: "May 2025",
-    link: "https://github.com/Vikiviki006",
+    link: "https://www.linkedin.com/posts/vignesh-k-2ab69629b_book-chapter-activity-7329190946640658435-S8HJ/?utm_source=share&utm_medium=member_android&rcm=ACoAAEiJuyMB57W2dZyVyazoXbaMpR1iW7yZnsA",
     description:
       "Worked on tumor segmentation and classification using deep learning architectures. Collaborated with a research team to improve detection accuracy.",
   },

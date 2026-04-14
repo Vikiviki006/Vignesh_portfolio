@@ -16,13 +16,13 @@ const experiences = [
     ],
   },
   {
-    role: "AI Developer Intern",
-    company: "Your Second Company",
+    role: "AI Developer Intern and Backend Developer",
+    company: "Payoda Technologies",
     type: "Internship",
-    date: "Jun 2024 – Aug 2024",
+    date: "Feb 2026 - Present",
     points: [
-      "Worked on computer vision models using OpenCV and YOLO for real-time object detection.",
-      "Integrated AI models with a web interface to deliver live predictions and analytics.",
+      "Built scalable backend APIs using FastAPI to support real-time data processing and model integration.",
+      "Designed and implemented multi-agent systems using CrewAI for autonomous task execution and intelligent workflow management.",
     ],
   },
 ];

@@ -8,7 +8,7 @@ const projects = [
     description:
       "Real-time identification of abnormal activities with automated alerts and evidence capture using AI.",
     tags: ["Python", "YOLOv8", "OpenCV", "Flask"],
-    link: "https://github.com/Vikiviki006",
+    link: "https://github.com/Vikiviki006/Anamoly_detection",
     period: "Jun – Oct 2025",
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     description:
       "Logistic Regression, Random Forest & SVM models with an interactive clinical web interface.",
     tags: ["Python", "Scikit-learn", "Flask", "ML"],
-    link: "https://github.com/Vikiviki006",
+    link: "https://github.com/Vikiviki006/Osterioporosis",
     period: "Mar 2024",
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     description:
       "Modern fitness tracking frontend with React.js, reusable components and responsive UI.",
     tags: ["React", "JavaScript", "CSS", "UI/UX"],
-    link: "https://github.com/Vikiviki006",
+    link: "https://github.com/Vikiviki006/FITTRACK_PRO",
     period: "Present",
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     description:
       "React-based app integrating TMDB API with dynamic rendering, search, and responsive UI.",
     tags: ["React", "TMDB API", "JavaScript"],
-    link: "https://github.com/Vikiviki006",
+    link: "https://movierecomend.vercel.app/",
     period: "Dec 2025",
   },
 ];
