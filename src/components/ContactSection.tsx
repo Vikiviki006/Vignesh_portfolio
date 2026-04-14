@@ -43,42 +43,63 @@ const socials = [
     label: "LeetCode",
     value: "viki006",
     href: "https://leetcode.com/u/viki006/",
-    icon: (
-      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-    ),
+    icon: <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />,
   },
 ];
 
 const ContactSection = () => (
-  <section id="contact" className="section-padding max-w-7xl mx-auto">
-    <SectionHeading title="Get In Touch" subtitle="contact" />
+  <section id="contact" className="section-padding max-w-6xl mx-auto">
+    <SectionHeading title="Get In Touch" subtitle="Contact" />
 
     <AnimatedSection>
       <div className="max-w-2xl">
-        <p className="text-muted-foreground mb-8 leading-relaxed">
-          I'm always open to discussing ML projects, research collaborations, or internship opportunities. Feel free to reach out!
+        <p className="text-muted-foreground mb-10 leading-relaxed">
+          I'm always open to discussing ML projects, research collaborations, or
+          internship opportunities. Feel free to reach out!
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-4">
-          {socials.map((s) => (
+        <div className="grid sm:grid-cols-2 gap-5">
+          {socials.map((s, i) => (
             <motion.a
               key={s.label}
               href={s.href}
               target={s.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              whileHover={{ x: 4 }}
-              className="flex items-center gap-4 glass-card p-4 group"
+              whileHover={{ y: -4 }}
+              className="group relative overflow-hidden rounded-xl border border-border/50 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-xl p-5 flex items-center gap-4 transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
             >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              {/* Glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-primary/5 blur-2xl" />
+
+              {/* Icon */}
+              <div className="relative w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 transition group-hover:scale-110 group-hover:bg-primary/20">
+                <svg
+                  className="w-5 h-5 text-primary"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   {s.icon}
                 </svg>
               </div>
-              <div>
-                <p className="text-xs text-muted-foreground">{s.label}</p>
-                <p className="text-sm font-mono text-foreground group-hover:text-primary transition-colors">
+
+              {/* Content */}
+              <div className="relative">
+                <p className="text-xs text-muted-foreground">
+                  {s.label}
+                </p>
+
+                <p className="text-sm font-mono text-foreground group-hover:text-primary transition">
                   {s.value}
                 </p>
+
+                {/* Hover CTA */}
+                <span className="text-[11px] text-primary opacity-0 group-hover:opacity-100 transition">
+                  Connect →
+                </span>
               </div>
             </motion.a>
           ))}
