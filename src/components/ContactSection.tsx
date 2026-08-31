@@ -1,105 +1,106 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
+import { Mail, Phone, Linkedin, Github, Code2, ArrowUpRight, MessageSquare } from "lucide-react";
 
 const socials = [
   {
-    label: "Email",
+    label: "Email Direct",
     value: "vikikannan8@gmail.com",
     href: "mailto:vikikannan8@gmail.com",
-    icon: (
-      <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-    ),
+    subtext: "Fastest response for engineering inquiries",
+    icon: <Mail className="w-5 h-5 text-amber-400" />,
   },
   {
-    label: "Phone",
+    label: "Phone / WhatsApp",
     value: "+91 63697 27236",
     href: "tel:+916369727236",
-    icon: (
-      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-    ),
+    subtext: "Direct voice call or messaging",
+    icon: <Phone className="w-5 h-5 text-amber-400" />,
   },
   {
-    label: "LinkedIn",
+    label: "LinkedIn Network",
     value: "Vignesh K",
     href: "https://www.linkedin.com/in/vignesh-k-2ab69629b/",
-    icon: (
-      <>
-        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" />
-        <rect x="2" y="9" width="4" height="12" />
-        <circle cx="4" cy="4" r="2" />
-      </>
-    ),
+    subtext: "Professional history & publications",
+    icon: <Linkedin className="w-5 h-5 text-amber-400" />,
   },
   {
-    label: "GitHub",
+    label: "GitHub Repositories",
     value: "Vikiviki006",
     href: "https://github.com/Vikiviki006",
-    icon: (
-      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
-    ),
+    subtext: "Source code & ML research repos",
+    icon: <Github className="w-5 h-5 text-amber-400" />,
   },
   {
-    label: "LeetCode",
+    label: "LeetCode Profile",
     value: "viki006",
     href: "https://leetcode.com/u/viki006/",
-    icon: <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />,
+    subtext: "Algorithmic problem solving record",
+    icon: <Code2 className="w-5 h-5 text-amber-400" />,
   },
 ];
 
 const ContactSection = () => (
-  <section id="contact" className="section-padding max-w-6xl mx-auto">
-    <SectionHeading title="Get In Touch" subtitle="Contact" />
+  <section id="contact" className="section-padding max-w-7xl mx-auto">
+    <SectionHeading
+      number="07"
+      subtitle="CONTACT"
+      title="Initiate Collaboration or Technical Discussion"
+      description="Interested in building high-performance AI services, microservices architecture, or reviewing research opportunities? Let's connect."
+    />
 
     <AnimatedSection>
-      <div className="max-w-2xl">
-        <p className="text-muted-foreground mb-10 leading-relaxed">
-          I'm always open to discussing ML projects, research collaborations, or
-          internship opportunities. Feel free to reach out!
-        </p>
+      <div className="max-w-4xl">
+        {/* Intro sentence folding availability naturally */}
+        <div className="p-6 rounded-2xl bg-amber-500/10 border border-amber-500/25 mb-10 backdrop-blur-md">
+          <div className="flex items-start gap-3">
+            <MessageSquare className="w-5 h-5 text-amber-400 shrink-0 mt-1" />
+            <p className="text-slate-200 text-sm sm:text-base font-sans leading-relaxed">
+              I am currently open to full-time <strong className="text-amber-400 font-semibold">AI/ML Engineering roles</strong>, asynchronous backend microservices architecture opportunities, and applied AI research collaborations. Feel free to reach out directly through any of the channels below.
+            </p>
+          </div>
+        </div>
 
-        <div className="grid sm:grid-cols-2 gap-5">
+        {/* Premium Interactive Card Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {socials.map((s, i) => (
             <motion.a
               key={s.label}
               href={s.href}
               target={s.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              whileHover={{ y: -4 }}
-              className="group relative overflow-hidden rounded-xl border border-border/50 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-xl p-5 flex items-center gap-4 transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c0f17]/90 backdrop-blur-xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-500/10"
             >
-              {/* Glow */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-primary/5 blur-2xl" />
+              {/* Subtle Ambient Hover Glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-b from-amber-500/10 via-transparent to-transparent pointer-events-none" />
 
-              {/* Icon */}
-              <div className="relative w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 transition group-hover:scale-110 group-hover:bg-primary/20">
-                <svg
-                  className="w-5 h-5 text-primary"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  {s.icon}
-                </svg>
-              </div>
+              <div>
+                {/* Header Row with Icon & Arrow Shift */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-black">
+                    {s.icon}
+                  </div>
+                  <div className="w-7 h-7 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 group-hover:text-amber-400 group-hover:border-amber-500/40 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </div>
+                </div>
 
-              {/* Content */}
-              <div className="relative">
-                <p className="text-xs text-muted-foreground">
+                {/* Content */}
+                <p className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">
                   {s.label}
                 </p>
-
-                <p className="text-sm font-mono text-foreground group-hover:text-primary transition">
+                <p className="text-base font-mono font-bold text-white group-hover:text-amber-400 transition-colors truncate">
                   {s.value}
                 </p>
+              </div>
 
-                {/* Hover CTA */}
-                <span className="text-[11px] text-primary opacity-0 group-hover:opacity-100 transition">
-                  Connect →
-                </span>
+              <div className="mt-4 pt-3 border-t border-white/5">
+                <p className="text-[11px] font-sans text-slate-400">
+                  {s.subtext}
+                </p>
               </div>
             </motion.a>
           ))}

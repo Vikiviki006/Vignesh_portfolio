@@ -1,27 +1,52 @@
 import { motion } from "framer-motion";
 
 interface Props {
+  number?: string;
   title: string;
   subtitle?: string;
-  accent?: string;
+  description?: string;
 }
 
-const SectionHeading = ({ title, subtitle, accent = "//" }: Props) => (
+const SectionHeading = ({ number, title, subtitle, description }: Props) => (
   <motion.div
-    initial={{ opacity: 0, x: -30 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5 }}
-    className="mb-12 md:mb-16"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-50px" }}
+    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+    className="mb-10 md:mb-14"
   >
-    <span className="text-primary font-mono text-sm tracking-widest uppercase">
-      {accent} {subtitle || title}
-    </span>
-    <h2 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold mt-2 text-foreground">
+    <div className="flex items-center gap-2 mb-2">
+      {number && (
+        <span className="font-mono text-xs font-semibold text-primary/90 tracking-wider">
+          {number}
+        </span>
+      )}
+      {number && subtitle && (
+        <span className="text-white/20 text-xs font-mono">/</span>
+      )}
+      {subtitle && (
+        <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground font-medium">
+          {subtitle}
+        </span>
+      )}
+    </div>
+    
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono font-bold tracking-tight text-white/95 leading-tight">
       {title}
     </h2>
-    <div className="h-1 w-16 bg-primary mt-4 rounded-full" />
+
+    {description && (
+      <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-2xl leading-relaxed">
+        {description}
+      </p>
+    )}
+
+    <div className="mt-4 flex items-center gap-1.5">
+      <div className="h-0.5 w-12 bg-primary/80 rounded-full" />
+      <div className="h-0.5 w-2 bg-primary/40 rounded-full" />
+    </div>
   </motion.div>
 );
 
 export default SectionHeading;
+
